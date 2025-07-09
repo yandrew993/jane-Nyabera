@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './testimonial.scss';
 
-const API_URL = 'http://localhost:5000/api/testimonials';
+const API_URL = 'https://nyabera-backend.onrender.com/api/testimonials';
 
 // Cloudinary config placeholders
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dlb3uchv2/image/upload';
