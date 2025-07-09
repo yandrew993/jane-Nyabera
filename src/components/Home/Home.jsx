@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 10000); // 10 seconds
+    }, 100000); // 10 seconds
     return () => clearInterval(timer);
   }, []);
 

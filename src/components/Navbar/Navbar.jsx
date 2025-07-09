@@ -11,7 +11,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <span>Dr. Amani's Portfolio</span>
+        <Link to="/">
+          <img src="/Jane Nyabera.png" alt="Jane Nyabera Logo" className="navbar__logo-img" />
+        </Link>
       </div>
       <button className="navbar__toggle" onClick={handleToggle} aria-label="Toggle navigation">
         {menuOpen ? '✕' : '☰'}
