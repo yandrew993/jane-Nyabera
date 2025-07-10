@@ -91,7 +91,7 @@ const Gallery = () => {
 
       <GallerySection title="Meetings And Workshops" images={galleryData.teaching} handleImgClick={handleImgClick} />
       <GallerySection title="School Events And Lectures" images={galleryData.events} handleImgClick={handleImgClick} />
-      <GallerySection title="Moments with Families and Collegues" images={galleryData.speaking} handleImgClick={handleImgClick} />
+      <GallerySection title="Moments with Family and Collegues" images={galleryData.speaking} handleImgClick={handleImgClick} />
 
       <div className="gallery__section">
         <h2 className="gallery__section-title">Videos</h2>
