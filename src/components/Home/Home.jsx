@@ -41,9 +41,9 @@ const Home = () => {
       <div className="home__container">
         <div className="home__info">
           <h1 className="home__title">Mrs Jane Nyabera</h1>
-          <h2 className="home__subtitle">M.S. in  Education Science</h2>
+          <h2 className="home__subtitle">Bachelor in  Education Science</h2>
           <p className="home__expertise">
-            Expert in Mathematics, Physics, and Chemistry in<br />
+            Specialist in Mathematics, Physics, and Chemistry in<br />
             the department of Science
           </p>
           <a href="/about" className="home__button">Explore more</a>
