@@ -82,27 +82,83 @@
   }
 
   &__image {
-    width: 90%;
-    height: 90%;
-    max-width: 340px;
-    max-height: 340px;
+    width: 100%;
+    height: 100%;
+    max-width: 70vw;
+    max-height: 70vh;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
     background: #f5f5f5;
     @media (max-width: 900px) {
-      width: 300px;
-      height: 300px;
-      max-width: 300px;
-      max-height: 300px;
-      border-radius: 5px;
+      width: 680px;
+      height: 680px;
+      max-width: 680px;
+      max-height: 680px;
+      border-radius: 20px;
     }
     @media (max-width: 600px) {
-      width: 160px;
-      height: 160px;
-      max-width: 160px;
-      max-height: 160px;
-      border-radius: 5px;
+      width: 440px;
+      height: 440px;
+      max-width: 440px;
+      max-height: 440px;
+      border-radius: 16px;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+    max-width: 70vw;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: 900px) {
+      width: 680px;
+      height: 680px;
+      max-width: 680px;
+      max-height: 680px;
+    }
+    @media (max-width: 600px) {
+      width: 440px;
+      height: 440px;
+      max-width: 440px;
+      max-height: 440px;
+    }
+  }
+  .home__image {
+    transition: none;
+    z-index: 1;
+  }
+  .slide-out {
+    animation: slideOutLeft 0.5s forwards cubic-bezier(0.4,0,0.2,1);
+    z-index: 2;
+  }
+  .slide-in {
+    animation: slideInLeft 0.5s forwards cubic-bezier(0.4,0,0.2,1);
+    z-index: 3;
+  }
+  @keyframes slideOutLeft {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0.7;
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(100%);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 
@@ -175,6 +231,20 @@
       right: -1.5rem;
       bottom: -1.2rem;
       opacity: 0.13;
+    }
+  }
+
+  &__slider.sliding .home__image {
+    animation: slideLeft 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(100%);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 

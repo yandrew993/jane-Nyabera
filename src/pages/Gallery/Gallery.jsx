@@ -3,27 +3,33 @@ import './gallery.scss';
 
 const galleryData = {
   teaching: [
-    { src: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=facearea&w=400&h=400', alt: 'Teaching 1' },
-    { src: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=facearea&w=400&h=400', alt: 'Teaching 2' },
-    { src: 'https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=facearea&w=400&h=400', alt: 'Teaching 3' },
-    { src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=facearea&w=400&h=400', alt: 'Teaching 4' },
-    { src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400', alt: 'Teaching 5' },
-    { src: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=400', alt: 'Teaching 6' },
+    { src: '/Meeting 1.jpeg', alt: 'Meeting 1' },
+    { src: '/Meeting 2.jpeg', alt: 'Meeting 2' },
   ],
   events: [
-    { src: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400', alt: 'Event 1' },
-    { src: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=facearea&w=400&h=400', alt: 'Event 2' },
-    { src: 'https://images.unsplash.com/photo-1462536943532-57a629f6cc60?auto=format&fit=facearea&w=400&h=400', alt: 'Event 3' },
-    { src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&h=400', alt: 'Event 4' },
-    { src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=facearea&w=400&h=400', alt: 'Event 5' },
+    { src: '/Event 1.jpeg', alt: 'Event 1' },
+    { src: '/Event 2.jpeg', alt: 'Event 2' },
+    { src: '/Event 3.jpeg', alt: 'Event 3' },
+    { src: '/Event 4.jpeg', alt: 'Event 4' },
+    { src: '/Event 5.jpeg', alt: 'Event 5' },
+    { src: '/Event 6.jpeg', alt: 'Event 6' },
+    { src: '/Event 7.jpeg', alt: 'Event 7' },
+    { src: '/Event 8.jpeg', alt: 'Event 8' },
   ],
   speaking: [
-    { src: 'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?auto=format&fit=facearea&w=400&h=400', alt: 'Speaking 1' },
-    { src: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=400', alt: 'Speaking 2' },
-    { src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400', alt: 'Speaking 3' },
-    { src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=facearea&w=400&h=400', alt: 'Speaking 4' },
-    { src: 'https://images.unsplash.com/photo-1462536943532-57a629f6cc60?auto=format&fit=facearea&w=400&h=400', alt: 'Speaking 5' },
-    { src: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400', alt: 'Speaking 6' },
+    { src: '/Moment 1.jpeg', alt: 'Moment 1' },
+    { src: '/Moment 2.jpeg', alt: 'Moment 2' },
+    { src: '/Moment 3.jpeg', alt: 'Moment 3' },
+    { src: '/Moment 4.jpeg', alt: 'Moment 4' },
+    { src: '/Moment 5.jpeg', alt: 'Moment 5' },
+    { src: '/Moment 6.jpeg', alt: 'Moment 6' },
+    { src: '/Moment 7.jpeg', alt: 'Moment 7' },
+    { src: '/Moment 8.jpeg', alt: 'Moment 8' },
+    { src: '/Moment 9.jpeg', alt: 'Moment 9' },
+    { src: '/Moment 10.jpeg', alt: 'Moment 10' },
+    { src: '/Moment 11.jpeg', alt: 'Moment 11' },
+    { src: '/Moment 12.jpeg', alt: 'Moment 12' },
+    { src: '/Moment 13.jpeg', alt: 'Moment 13' },
   ],
   videos: [
     { src: 'https://img.icons8.com/ios-filled/100/000000/test-tube.png', label: 'Teaching Chemistry' },
@@ -41,6 +47,33 @@ const allImages = [
   ...galleryData.speaking,
 ];
 
+const GallerySection = ({ title, images, handleImgClick }) => {
+  const [page, setPage] = useState(0);
+  const imagesPerPage = 6;
+  const totalPages = Math.ceil(images.length / imagesPerPage);
+  const pagedImages = images.slice(page * imagesPerPage, (page + 1) * imagesPerPage);
+
+  return (
+    <div className="gallery__section">
+      <h2 className="gallery__section-title">{title}</h2>
+      <div className="gallery__grid">
+        {pagedImages.map((img, i) => (
+          <div className="gallery__item" key={i} onClick={() => handleImgClick(img)} tabIndex={0} role="button" aria-label="View image" >
+            <img src={img.src} alt={img.alt} />
+          </div>
+        ))}
+      </div>
+      {totalPages > 1 && (
+        <div className="gallery__pagination">
+          <button onClick={() => setPage(page - 1)} disabled={page === 0}>&lt;</button>
+          <span>Page {page + 1} of {totalPages}</span>
+          <button onClick={() => setPage(page + 1)} disabled={page === totalPages - 1}>&gt;</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Gallery = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
@@ -56,38 +89,9 @@ const Gallery = () => {
       <h1 className="gallery__title">Gallery & Events</h1>
       <p className="gallery__desc">Explore a visual journey through my teaching career, school events, and public speaking engagements. This gallery showcases moments of learning, collaboration, and celebration.</p>
 
-      <div className="gallery__section">
-        <h2 className="gallery__section-title">Teaching Moments</h2>
-        <div className="gallery__grid">
-          {galleryData.teaching.map((img, i) => (
-            <div className="gallery__item" key={i} onClick={() => handleImgClick(img)} tabIndex={0} role="button" aria-label="View image" >
-              <img src={img.src} alt={img.alt} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="gallery__section">
-        <h2 className="gallery__section-title">School Events</h2>
-        <div className="gallery__grid">
-          {galleryData.events.map((img, i) => (
-            <div className="gallery__item" key={i} onClick={() => handleImgClick(img)} tabIndex={0} role="button" aria-label="View image" >
-              <img src={img.src} alt={img.alt} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="gallery__section">
-        <h2 className="gallery__section-title">Public Speaking</h2>
-        <div className="gallery__grid">
-          {galleryData.speaking.map((img, i) => (
-            <div className="gallery__item" key={i} onClick={() => handleImgClick(img)} tabIndex={0} role="button" aria-label="View image" >
-              <img src={img.src} alt={img.alt} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <GallerySection title="Meetings And Workshops" images={galleryData.teaching} handleImgClick={handleImgClick} />
+      <GallerySection title="School Events And Lectures" images={galleryData.events} handleImgClick={handleImgClick} />
+      <GallerySection title="Moments with Families and Collegues" images={galleryData.speaking} handleImgClick={handleImgClick} />
 
       <div className="gallery__section">
         <h2 className="gallery__section-title">Videos</h2>

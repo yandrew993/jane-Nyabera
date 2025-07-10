@@ -1,30 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './home.scss';
 
 const images = [
-  'https://randomuser.me/api/portraits/women/44.jpg',
-  'https://randomuser.me/api/portraits/women/45.jpg',
-  'https://randomuser.me/api/portraits/women/46.jpg',
+  '/Home 1.jpeg',
+  '/Home 2.jpeg',
+  '/Home 3.jpeg',
+  '/Home 4.jpeg',
+  '/Home 5.jpeg',
+  '/Home 6.jpeg',
 ];
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
+  const [next, setNext] = useState(null); // index of next image
+  const [isSliding, setIsSliding] = useState(false);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 100000); // 10 seconds
-    return () => clearInterval(timer);
-  }, []);
+    timeoutRef.current = setTimeout(() => {
+      handleSlide((current + 1) % images.length);
+    }, 80000);
+    return () => clearTimeout(timeoutRef.current);
+  }, [current]);
 
-  const nextImage = () => setCurrent((prev) => (prev + 1) % images.length);
-  const prevImage = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  const handleSlide = (nextIndex) => {
+    setNext(nextIndex);
+    setIsSliding(true);
+    setTimeout(() => {
+      setCurrent(nextIndex);
+      setIsSliding(false);
+      setNext(null);
+    }, 1000); // match CSS duration
+  };
+
+  const nextImage = () => handleSlide((current + 1) % images.length);
+  const prevImage = () => handleSlide((current - 1 + images.length) % images.length);
 
   return (
     <section className="home">
       <div className="home__container">
         <div className="home__info">
-          <h1 className="home__title">Md Nyabera</h1>
+          <h1 className="home__title">Mrs Jane Nyabera</h1>
           <h2 className="home__subtitle">M.S. in  Education Science</h2>
           <p className="home__expertise">
             Expert in Mathematics, Physics, and Chemistry in<br />
@@ -34,11 +50,22 @@ const Home = () => {
         </div>
         <div className="home__image-wrapper">
           <button className="home__slider-btn left" onClick={prevImage} aria-label="Previous image">&#60;</button>
-          <img
-            className="home__image"
-            src={images[current]}
-            alt="Dr. Amani"
-          />
+          <div className={`home__slider${isSliding ? ' sliding' : ''}`}>
+            <img
+              className={`home__image${isSliding ? ' slide-out' : ''}`}
+              src={images[current]}
+              alt="Dr. Amani"
+              style={{ position: isSliding ? 'absolute' : 'relative', left: 0, top: 0 }}
+            />
+            {isSliding && next !== null && (
+              <img
+                className="home__image slide-in"
+                src={images[next]}
+                alt="Dr. Amani"
+                style={{ position: 'relative', left: 0, top: 0 }}
+              />
+            )}
+          </div>
           <button className="home__slider-btn right" onClick={nextImage} aria-label="Next image">&#62;</button>
         </div>
       </div>

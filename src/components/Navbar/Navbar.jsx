@@ -26,7 +26,7 @@ const Navbar = () => {
         <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
       </ul>
       <div className="navbar__avatar">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Amani Avatar" />
+        <img src="/Home 5.jpeg" alt="Dr. Amani Avatar" />
       </div>
     </nav>
   );

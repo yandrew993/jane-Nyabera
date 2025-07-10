@@ -118,6 +118,41 @@
   margin-top: 0.5rem;
 }
 
+.gallery__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+
+  button {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 1.1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    &:hover:not(:disabled) {
+      background: #388e3c;
+    }
+    &:disabled {
+      background: #e0e0e0;
+      color: #aaa;
+      cursor: not-allowed;
+    }
+  }
+  span {
+    font-size: 1.05rem;
+    color: #388e3c;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+}
+
 @media (max-width: 900px) {
   .gallery {
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;
