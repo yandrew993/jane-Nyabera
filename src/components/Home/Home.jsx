@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       handleSlide((current + 1) % images.length);
-    }, 80000);
+    }, 30000);
     return () => clearTimeout(timeoutRef.current);
   }, [current]);
 
