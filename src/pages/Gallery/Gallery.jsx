@@ -15,6 +15,11 @@ const galleryData = {
     { src: '/Event 6.jpeg', alt: 'Event 6' },
     { src: '/Event 7.jpeg', alt: 'Event 7' },
     { src: '/Event 8.jpeg', alt: 'Event 8' },
+    { src: '/Event 9.jpeg', alt: 'Event 9' },
+    { src: '/Event 10.jpeg', alt: 'Event 10' },
+    { src: '/Event 11.jpeg', alt: 'Event 11' },
+    { src: '/Event 12.jpeg', alt: 'Event 12' },
+    { src: '/Event 13.jpeg', alt: 'Event 13' },
   ],
   speaking: [
     { src: '/Moment 1.jpeg', alt: 'Moment 1' },
@@ -30,6 +35,7 @@ const galleryData = {
     { src: '/Moment 11.jpeg', alt: 'Moment 11' },
     { src: '/Moment 12.jpeg', alt: 'Moment 12' },
     { src: '/Moment 13.jpeg', alt: 'Moment 13' },
+    { src: '/Moment 14.jpeg', alt: 'Moment 14' },
   ],
   videos: [
     { youtubeId: 'AQcpvc-KXYI', label: 'Worshiping with Students' },
