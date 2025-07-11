@@ -8,7 +8,7 @@ const About = () => (
       <h1 className="about__name">Md. Nyabera</h1>
       <h2 className="about__roles">Mathematics, Physics, Chemistry, and Administration</h2>
       <p className="about__intro">
-        With over 15 years of experience in education, Md. Nyabera is dedicated to fostering a love for science and mathematics in her students. Her approach combines rigorous academic content with practical applications, ensuring students not only understand complex concepts but also know how to apply them in real-world scenarios.
+        With over 35 years of experience in education, Md. Nyabera is dedicated to fostering a love for science and mathematics in her students. Her approach combines rigorous academic content with practical applications, ensuring students not only understand complex concepts but also know how to apply them in real-world scenarios.
       </p>
     </section>
 

@@ -32,7 +32,7 @@ const galleryData = {
     { src: '/Moment 13.jpeg', alt: 'Moment 13' },
   ],
   videos: [
-    { src: 'https://img.icons8.com/ios-filled/100/000000/test-tube.png', label: 'Teaching Chemistry' },
+    { youtubeId: 'AQcpvc-KXYI', label: 'Worshiping with Students' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/physics.png', label: 'Physics Demonstration' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/calculator.png', label: 'Math Workshop' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/experiment.png', label: 'Science Fair Highlights' },
@@ -77,9 +77,16 @@ const GallerySection = ({ title, images, handleImgClick }) => {
 const Gallery = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
+  const [modalVideo, setModalVideo] = useState(null);
 
   const handleImgClick = (img) => {
     setModalImg(img);
+    setModalVideo(null);
+    setModalOpen(true);
+  };
+  const handleVideoClick = (vid) => {
+    setModalVideo(vid);
+    setModalImg(null);
     setModalOpen(true);
   };
   const closeModal = () => setModalOpen(false);
@@ -97,11 +104,18 @@ const Gallery = () => {
         <h2 className="gallery__section-title">Videos</h2>
         <div className="gallery__grid gallery__grid--videos">
           {galleryData.videos.map((vid, i) => (
-            <div className="gallery__item gallery__item--video" key={i} onClick={() => handleImgClick({ src: vid.src, alt: vid.label })} tabIndex={0} role="button" aria-label="View video thumbnail">
-              <div className="gallery__video-thumb">
-                <img src={vid.src} alt={vid.label} />
-                <span className="gallery__play">▶</span>
-              </div>
+            <div className="gallery__item gallery__item--video" key={i} tabIndex={0} role="button" aria-label="View video" onClick={() => handleVideoClick(vid)}>
+              {vid.youtubeId ? (
+                <div className="gallery__video-embed">
+                  <img src={`https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`} alt={vid.label} />
+                  <span className="gallery__play">▶</span>
+                </div>
+              ) : (
+                <div className="gallery__video-thumb">
+                  <img src={vid.src} alt={vid.label} />
+                  <span className="gallery__play">▶</span>
+                </div>
+              )}
               <div className="gallery__video-label">{vid.label}</div>
             </div>
           ))}
@@ -110,10 +124,37 @@ const Gallery = () => {
 
       {modalOpen && (
         <div className="gallery__modal" onClick={closeModal}>
-          <div className="gallery__modal-content" onClick={e => e.stopPropagation()}>
-            <button className="gallery__modal-close" onClick={closeModal} aria-label="Close image">×</button>
-            <img src={modalImg.src} alt={modalImg.alt} className="gallery__modal-img" />
-            <div className="gallery__modal-caption">{modalImg.alt}</div>
+          <div className="gallery__modal-content gallery__modal-content--video" onClick={e => e.stopPropagation()}>
+            <button className="gallery__modal-close" onClick={closeModal} aria-label="Close modal">×</button>
+            {modalImg && (
+              <>
+                <img src={modalImg.src} alt={modalImg.alt} className="gallery__modal-img" />
+                <div className="gallery__modal-caption">{modalImg.alt}</div>
+              </>
+            )}
+            {modalVideo && modalVideo.youtubeId && (
+              <div className="gallery__modal-video-wrapper">
+                <iframe
+                  width="800"
+                  height="450"
+                  src={`https://www.youtube.com/embed/${modalVideo.youtubeId}?autoplay=1`}
+                  title={modalVideo.label}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="gallery__modal-caption">{modalVideo.label}</div>
+              </div>
+            )}
+            {modalVideo && modalVideo.src && (
+              <div className="gallery__modal-video-wrapper">
+                <video width="800" height="450" controls autoPlay>
+                  <source src={modalVideo.src} />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="gallery__modal-caption">{modalVideo.label}</div>
+              </div>
+            )}
           </div>
         </div>
       )}
