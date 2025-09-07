@@ -39,6 +39,7 @@ const galleryData = {
   ],
   videos: [
     { youtubeId: 'AQcpvc-KXYI', label: 'Developing Sinaga School Anthem with Students' },
+    { youtubeId: 'xjvYQYYi0MY', label: 'Mutumbu teachers motivational party' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/physics.png', label: 'Physics Demonstration' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/calculator.png', label: 'Math Workshop' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/experiment.png', label: 'Science Fair Highlights' },
