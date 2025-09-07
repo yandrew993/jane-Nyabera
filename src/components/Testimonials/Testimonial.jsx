@@ -118,7 +118,12 @@ const Testimonial = () => {
       <div className="testimonial-list">
         {paginatedTestimonials.map((t, idx) => (
           <div className="testimonial-card" key={t.id || idx}>
-            <img className="testimonial-avatar" src={t.image} alt={t.name} />
+            <img
+              className="testimonial-avatar"
+              src={t.image || 'user.jpg'}
+              alt={t.name}
+              onError={e => { e.target.onerror = null; e.target.src = 'user.jpg'; }}
+            />
             <div className="testimonial-content">
               <div className="testimonial-header">
                 <span className="testimonial-name">{t.name}</span>
