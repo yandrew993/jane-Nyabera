@@ -60,7 +60,7 @@ const Testimonial = () => {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
-    let imageUrl = imagePreview || 'https://randomuser.me/api/portraits/lego/1.jpg';
+    let imageUrl = imagePreview || 'user.jpg';
 
     // Upload image to Cloudinary if a file is selected
     if (form.image) {

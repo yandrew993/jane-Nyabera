@@ -21,6 +21,7 @@ const galleryData = {
     { src: '/Event 11.jpeg', alt: 'Event 11' },
     { src: '/Event 12.jpeg', alt: 'Event 12' },
     { src: '/Event 13.jpeg', alt: 'Event 13' },
+    { src: '/Event 13.jpeg', alt: 'Event 14' },
   ],
   speaking: [
     { src: '/Moment 1.jpeg', alt: 'Moment 1' },
