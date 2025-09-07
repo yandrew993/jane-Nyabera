@@ -5,6 +5,7 @@ const galleryData = {
   teaching: [
     { src: '/Meeting 1.jpeg', alt: 'Meeting 1' },
     { src: '/Meeting 2.jpeg', alt: 'Meeting 2' },
+    { src: '/Meeting 3.jpeg', alt: 'Sub county KESSHA meeting at Joventure hotel KSM 2021' },
   ],
   events: [
     { src: '/Event 1.jpeg', alt: 'Academic top students for sinaga visited UON library at Kisumu' },
@@ -34,7 +35,7 @@ const galleryData = {
     { src: '/Moment 10.jpeg', alt: 'Moment 10' },
     { src: '/Moment 11.jpeg', alt: 'Moment 11' },
     { src: '/Moment 12.jpeg', alt: 'Moment 12' },
-    { src: '/Moment 13.jpeg', alt: 'Moment 13' },
+    { src: '/Moment 13.jpeg', alt: 'Celebrating my maths teacher on retirement' },
     { src: '/Moment 14.jpeg', alt: 'Senior Mathematicians delivered a shield to Mr Okudo' },
   ],
   videos: [
