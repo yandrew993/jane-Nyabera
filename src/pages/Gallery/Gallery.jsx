@@ -21,7 +21,7 @@ const galleryData = {
     { src: '/Event 11.jpeg', alt: 'Event 11' },
     { src: '/Event 12.jpeg', alt: 'Event 12' },
     { src: '/Event 13.jpeg', alt: 'Event 13' },
-    { src: '/Event 13.jpeg', alt: 'Event 14' },
+    { src: '/Event 14.jpeg', alt: 'Awarding the best maths student' },
   ],
   speaking: [
     { src: '/Moment 1.jpeg', alt: 'Moment 1' },
@@ -42,6 +42,8 @@ const galleryData = {
   videos: [
     { youtubeId: 'AQcpvc-KXYI', label: 'Developing Sinaga School Anthem with Students' },
     { youtubeId: 'xjvYQYYi0MY', label: 'Mutumbu teachers motivational party' },
+    { youtubeId: 'J6hHV3Fh408', label: 'Distributing pads at Mutumbu courtesy of DTB' },
+    { youtubeId: '1yJECteVSuA', label: 'Mutumbu staff playing football versus school team' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/physics.png', label: 'Physics Demonstration' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/calculator.png', label: 'Math Workshop' },
     { src: 'https://img.icons8.com/ios-filled/100/000000/experiment.png', label: 'Science Fair Highlights' },
