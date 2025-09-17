@@ -95,6 +95,9 @@
     }
   }
   .testimonial-text {
+    position: relative;
+    min-height: 1.5em;
+    word-break: break-word;
     color: #444;
     font-size: 0.97rem;
     font-weight: 400;
@@ -103,6 +106,24 @@
     font-style: italic;
     line-height: 1.6;
     letter-spacing: 0.01em;
+  }
+
+  .see-more-btn {
+    background: none;
+    border: none;
+    color: #388e3c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+    &:hover, &:focus {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
   }
 
   .testimonial-pagination {
@@ -277,6 +298,11 @@
     }
     .testimonial-form {
       padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+    .see-more-btn {
+      font-size: 0.92rem;
+      padding: 0.08rem 0.3rem;
+      margin-left: 0.3rem;
     }
   }
 }

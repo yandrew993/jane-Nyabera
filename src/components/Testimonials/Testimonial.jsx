@@ -15,6 +15,7 @@ const Testimonial = () => {
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [expandedTestimonials, setExpandedTestimonials] = useState({});
   const testimonialsPerPage = 3;
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
   const paginatedTestimonials = testimonials.slice(
@@ -110,6 +111,13 @@ const Testimonial = () => {
     }
   };
 
+  const toggleExpand = idx => {
+    setExpandedTestimonials(prev => ({
+      ...prev,
+      [idx]: !prev[idx]
+    }));
+  };
+
   return (
     <section className="testimonial-section">
       <h2>Testimonials</h2>
@@ -135,7 +143,24 @@ const Testimonial = () => {
                   <span key={i} className={`star${i < t.rating ? ' active' : ''}`}>★</span>
                 ))}
               </div>
-              <div className="testimonial-text">{t.testimonial}</div>
+              <div className="testimonial-text">
+                {t.testimonial.length > 100 ? (
+                  <>
+                    {expandedTestimonials[idx]
+                      ? t.testimonial
+                      : t.testimonial.slice(0, 100) + '...'}
+                    <button
+                      className="see-more-btn"
+                      onClick={() => toggleExpand(idx)}
+                      type="button"
+                    >
+                      {expandedTestimonials[idx] ? 'See less' : 'See more'}
+                    </button>
+                  </>
+                ) : (
+                  t.testimonial
+                )}
+              </div>
             </div>
           </div>
         ))}
