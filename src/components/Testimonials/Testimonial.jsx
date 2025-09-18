@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './testimonial.scss';
-import Maintenance from '../Maintenance/Maintenance';
+import Maintenance from '../../Maintenance/Maintenance';
 
 const API_URL = 'https://nyabera-backend.onrender.com/api/testimonials';
 

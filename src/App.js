@@ -7,27 +7,24 @@ import Experiance from './pages/Experiance/Experiance';
 import Gallery from './pages/Gallery/Gallery';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MaintenanceWrapper from './MaintenanceWrapper';
 
 function App() {
   return (
-    <MaintenanceWrapper>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Home />
-              <Testimonial />
-            </>
-          } />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experiance />} />
-          <Route path="/gallery" element={<Gallery />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </MaintenanceWrapper>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Home />
+            <Testimonial />
+          </>
+        } />
+        <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<Experiance />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
