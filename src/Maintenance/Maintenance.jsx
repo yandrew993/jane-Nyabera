@@ -15,6 +15,9 @@ const Maintenance = () => (
       </div>
       <h1>System is still under maintenance</h1>
       <p>We will be back soon. Please check again later.</p>
+      <button className="maintenance-chat-btn" onClick={() => window.open('https://wa.me/254741048174', '_blank')}>
+        Chat with me for quick help
+      </button>
     </div>
   </div>
 );
