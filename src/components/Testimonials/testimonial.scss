@@ -284,6 +284,41 @@
     }
   }
 
+  .testimonial-reactions {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    align-items: center;
+    .reaction-btn {
+      background: none;
+      border: none;
+      font-size: 1.1rem; // reduce icon size
+      cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+      outline: none;
+      padding: 0.08rem 0.3rem;
+      border-radius: 4px;
+      color: #757575;
+      svg {
+        width: 18px !important;
+        height: 22px !important;
+        vertical-align: middle;
+        transition: fill 0.2s;
+      }
+      &.thumbs-up.active svg path {
+        fill: #1877f2 !important;
+        stroke: #1877f2 !important;
+      }
+      &.thumbs-up svg path {
+        fill: #fff !important;
+        stroke: #757575 !important;
+      }
+      &.heart.active {
+        color: #e0245e;
+      }
+    }
+  }
   @media (max-width: 600px) {
     padding: 1rem 0.2rem 2rem 0.2rem;
     .testimonial-card {
@@ -303,6 +338,13 @@
       font-size: 0.92rem;
       padding: 0.08rem 0.3rem;
       margin-left: 0.3rem;
+    }
+    .testimonial-reactions {
+      gap: 0.7rem;
+      .reaction-btn {
+        font-size: 1.1rem;
+        padding: 0.08rem 0.3rem;
+      }
     }
   }
 }

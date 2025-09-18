@@ -1,0 +1,39 @@
+.maintenance-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(34, 34, 34, 0.97);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.maintenance-content {
+  text-align: center;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(224,36,94,0.10), 0 2px 16px rgba(0,0,0,0.08);
+}
+.maintenance-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.2rem 0 0.7rem 0;
+  color: #e0245e;
+}
+.maintenance-content p {
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.maintenance-animation {
+  margin-bottom: 1.2rem;
+  animation: disappointed 1.5s infinite alternate;
+}
+@keyframes disappointed {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(10px) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
