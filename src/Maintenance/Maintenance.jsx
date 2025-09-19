@@ -3,7 +3,7 @@ import './maintenance.scss';
 
 const Maintenance = () => (
   <div className="maintenance-overlay">
-    <div className="maintenance-content">
+    {/* <div className="maintenance-content">
       <div className="maintenance-animation">
         <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="60" cy="60" r="55" stroke="#e0245e" strokeWidth="6" fill="#fff" />
@@ -18,7 +18,7 @@ const Maintenance = () => (
       <button className="maintenance-chat-btn" onClick={() => window.open('https://wa.me/254741048174', '_blank')}>
         Chat with me for quick help
       </button>
-    </div>
+    </div> */}
   </div>
 );
 

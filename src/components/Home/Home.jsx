@@ -75,6 +75,7 @@ const Home = () => {
           "Education is not just about imparting knowledge, but about inspiring curiosity, nurturing confidence, and empowering every student to reach their fullest potential. My journey as an educator has been guided by a passion for science and a commitment to creating an inclusive, supportive environment where every learner can thrive. Together, let's embrace challenges, celebrate achievements, and build a brighter future through the power of learning."
         </blockquote>
       </div>
+      
     </section>
   );
 };

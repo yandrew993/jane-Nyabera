@@ -308,15 +308,34 @@
       }
       &.thumbs-up.active svg path {
         fill: #1877f2 !important;
-        stroke: #1877f2 !important;
+        stroke: #fff !important;
       }
       &.thumbs-up svg path {
         fill: #fff !important;
         stroke: #757575 !important;
       }
-      &.heart.active {
-        color: #e0245e;
+      &.heart.active svg path {
+        fill: #e0245e !important;
+        stroke: #fff !important;
       }
+      &.heart svg path {
+        fill: #fff !important;
+        stroke: #757575 !important;
+      }
+    }
+    .reaction-count {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #757575;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .reaction-btn.active .reaction-count {
+      color: #1976d2;
+    }
+    .reaction-btn.heart.active .reaction-count {
+      color: #e0245e;
     }
   }
   @media (max-width: 600px) {
