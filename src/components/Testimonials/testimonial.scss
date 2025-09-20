@@ -323,6 +323,12 @@
         stroke: #757575 !important;
       }
     }
+    .reaction-count {
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin-left: 0.18rem;
+      vertical-align: middle;
+    }
   }
   @media (max-width: 600px) {
     padding: 1rem 0.2rem 2rem 0.2rem;

@@ -23,7 +23,7 @@ const Navbar = () => {
         <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
         <li><a href="/gallery" onClick={handleLinkClick}>Gallery</a></li>
         <li><a href="/experience" onClick={handleLinkClick}>Experience</a></li>
-        <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
+        <li><a href="/contact" onClick={handleLinkClick}>Contact</a></li>
       </ul>
       <div className="navbar__avatar">
         <img src="/Home 5.jpeg" alt="Dr. Amani Avatar" />
