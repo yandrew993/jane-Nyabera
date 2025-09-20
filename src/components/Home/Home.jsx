@@ -46,7 +46,7 @@ const Home = () => {
             Specialist in Mathematics, Physics, and Chemistry in<br />
             the department of Science
           </p>
-          <a href="/about" className="home__button">Explore more</a>
+          <a href="/contact" className="home__button">Let's Connect</a>
         </div>
         <div className="home__image-wrapper">
           <button className="home__slider-btn left" onClick={prevImage} aria-label="Previous image">&#60;</button>
