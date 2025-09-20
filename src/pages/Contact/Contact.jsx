@@ -45,7 +45,7 @@ const Contact = () => {
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      value: 'nyaberajane70@gmail.com',
+      value: 'Send Email',
       link: 'mailto:nyaberajane70@gmail.com'
     }
   ];
