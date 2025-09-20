@@ -23,10 +23,18 @@ const Experiance = () => (
         </div>
         
         <div className="experiance__job">
-          <h2>Hores Ongili High School</h2>
-          <div className="experiance__role">Mathematics and Physics Teacher <span>| 2008 - 2014</span></div>
-          <p>Taught mathematics and physics with a passion for making complex concepts accessible and engaging. Designed interactive lessons and laboratory experiments that encouraged curiosity and critical thinking. Mentored students in science fairs and math competitions, helping many discover their talents and pursue further studies in STEM fields. Built strong relationships with students and colleagues, contributing to a collaborative and supportive school environment.</p>
+          <h2>Horace Ongili Secondary School</h2>
+          <div className="experiance__role">Director of Studies (DOS) <span>| 2011 - 2013</span></div>
+          <p>Served as Director of Studies at Horace Ongili Secondary School, where strategic academic leadership and a focus on excellence led the school to achieve its best results ever. Implemented effective study programmes, motivated both staff and students, and cultivated a culture of high expectations and continuous improvement.</p>
         </div>
+        <div className="experiance__job">
+          <h2>Sega Girls' High School</h2>
+          <div className="experiance__role">Head of Boarding (HOD), Mathematics Coordinator <span>| 2008 - 2010</span></div>
+          <p>
+  During her tenure as Head of Boarding at Sega Girls' High School, she ensured a safe, nurturing, and well-organized residential environment that supported both academic and personal growth. She coordinated a transformative Mathematics programme across Sega Girls, Sega Township, and Jera Mixed, fostering collaboration and the sharing of best practices among educators. As Organising Secretary for Mathematics in present-day Siaya County, she led initiatives that inspired a passion for mathematics, significantly improving student engagement and achievement. These efforts elevated academic standards and cultivated a lasting positive attitude toward mathematics in all three schools.
+</p>
+        </div>
+        
       </div>
     </section>
 

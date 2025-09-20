@@ -126,33 +126,40 @@ const Testimonial = () => {
     const testimonial = paginatedTestimonials[idx];
     if (!testimonial || !testimonial.id) return;
 
+    // Use testimonial.id for reaction state
+    const isActive = reactions[testimonial.id]?.[type];
+    const action = isActive ? 'decrement' : 'increment';
+
     try {
       const res = await fetch(`${API_URL}/${testimonial.id}/reaction`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: type === 'thumbsUp' ? 'like' : 'heart' }),
+        body: JSON.stringify({ type: type === 'thumbsUp' ? 'like' : 'heart', action }),
       });
       if (!res.ok) throw new Error('Failed to update reaction');
       const updated = await res.json();
 
-      // Update testimonials state with new counts
       setTestimonials(prev =>
         prev.map(t =>
           t.id === updated.id ? { ...t, likes: updated.likes, hearts: updated.hearts } : t
         )
       );
 
-      // Update local reaction state for button color
       setReactions(prev => ({
         ...prev,
-        [idx]: {
-          ...prev[idx],
-          [type]: !prev[idx]?.[type]
+        [testimonial.id]: {
+          ...prev[testimonial.id],
+          [type]: !prev[testimonial.id]?.[type]
         }
       }));
     } catch (err) {
       setError('Failed to update reaction.');
     }
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // No full page reload; testimonials content updates automatically
   };
 
   return UNDER_MAINTENANCE ? <Maintenance /> : (
@@ -200,7 +207,7 @@ const Testimonial = () => {
               </div>
               <div className="testimonial-reactions">
                 <button
-                  className={`reaction-btn thumbs-up${reactions[idx]?.thumbsUp ? ' active' : ''}`}
+                  className={`reaction-btn thumbs-up${t.likes > 0 ? ' active' : ''}`}
                   onClick={() => handleReaction(idx, 'thumbsUp')}
                   type="button"
                   aria-label="Thumbs up"
@@ -212,13 +219,13 @@ const Testimonial = () => {
                   <span className="reaction-count">{typeof t.likes === 'number' ? t.likes : 0}</span>
                 </button>
                 <button
-                  className={`reaction-btn heart${reactions[idx]?.heart ? ' active' : ''}`}
+                  className={`reaction-btn heart${t.hearts > 0 ? ' active' : ''}`}
                   onClick={() => handleReaction(idx, 'heart')}
                   type="button"
                   aria-label="Heart"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill={reactions[idx]?.heart ? '#e0245e' : 'white'} stroke="#757575" strokeWidth="1.5"/>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill={t.hearts > 0 ? '#e0245e' : 'white'} stroke="#757575" strokeWidth="1.5"/>
                   </svg>
                   <span className="reaction-count">{typeof t.hearts === 'number' ? t.hearts : 0}</span>
                 </button>
@@ -239,7 +246,7 @@ const Testimonial = () => {
           <span
             key={i}
             className={`page${currentPage === i + 1 ? ' active' : ''}`}
-            onClick={() => setCurrentPage(i + 1)}
+            onClick={() => handlePageChange(i + 1)}
             role="button"
             tabIndex={0}
             aria-label={`Go to page ${i + 1}`}
