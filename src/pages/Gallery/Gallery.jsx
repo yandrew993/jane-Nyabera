@@ -8,8 +8,8 @@ const galleryData = {
     { src: '/Meeting 3.jpeg', alt: 'Sub county KESSHA meeting at Joventure hotel KSM 2021' },
   ],
   events: [
-    { src: '/Event 1.jpeg', alt: 'Academic top students for sinaga visited UON library at Kisumu' },
-    { src: '/Event 2.jpeg', alt: 'Lesson observation in progress' },
+    { src: '/Event 1.jpeg', alt: '' },
+    { src: '/Event 2.jpeg', alt: "Chief guest during PP2 Pupils of God's Miracle School graduation ceremony." },
     { src: '/Event 3.jpeg', alt: 'Mutumbu Agriculture students visited Bukura Agricultural college for more skills' },
     { src: '/Event 4.jpeg', alt: 'Event 4' },
     { src: '/Event 5.jpeg', alt: 'Event 5' },
@@ -22,6 +22,8 @@ const galleryData = {
     { src: '/Event 12.jpeg', alt: 'Event 12' },
     { src: '/Event 13.jpeg', alt: 'Event 13' },
     { src: '/Event 14.jpeg', alt: 'Awarding the best maths student' },
+    { src: '/Event 15.jpeg', alt: 'Academic top students for sinaga visited UON library at Kisumu' },
+    { src: '/Event 16.jpeg', alt: 'Lesson observation in progress' },
   ],
   speaking: [
     { src: '/Moment 1.jpeg', alt: 'Moment 1' },
