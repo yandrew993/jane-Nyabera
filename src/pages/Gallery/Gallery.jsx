@@ -8,7 +8,7 @@ const galleryData = {
     { src: '/Meeting 3.jpeg', alt: 'Sub county KESSHA meeting at Joventure hotel KSM 2021' },
   ],
   events: [
-    { src: '/Event 1.jpeg', alt: '' },
+    { src: '/Event 1.jpeg', alt: "Tree planting day at Sinaga Girls with F4's of 2023" },
     { src: '/Event 2.jpeg', alt: "Chief guest during PP2 Pupils of God's Miracle School graduation ceremony." },
     { src: '/Event 3.jpeg', alt: 'Mutumbu Agriculture students visited Bukura Agricultural college for more skills' },
     { src: '/Event 4.jpeg', alt: 'Event 4' },
